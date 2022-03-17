@@ -9,3 +9,8 @@
     text-align: center;
     color: rgb(0, 0, 110);
 }
+
+th {
+    background-color: rgb(130, 185, 0);
+    color: white;
+}

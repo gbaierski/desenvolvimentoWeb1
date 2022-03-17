@@ -1,0 +1,11 @@
+#divCentro {
+    width: 35%;
+    padding: 20px;
+    border: 2px solid black;
+    font-size: 11px;
+    line-height: 200%;
+    font-family: Helvetica;
+    margin: auto;
+    text-align: center;
+    color: rgb(0, 0, 110);
+}

@@ -1,3 +1,4 @@
+/* ---- Exercício 1 ---- */
 #divCentro {
     width: 35%;
     padding: 20px;
@@ -10,7 +11,40 @@
     color: rgb(0, 0, 110);
 }
 
+/* ---- Exercício 2 ---- */
+table {
+    width: 600px;/*Largura de 600px*/
+    border-spacing: 0px;/*Sem borda entre as células*/
+    font-size: 12px;/*Tamanho da fonte 12px*/
+    margin: auto;/*Centralizada*/
+    border: none;/*Sem borda*/
+    font-family: Arial;/*Fonte arial*/
+    text-align: center;
+}
+
 th {
-    background-color: rgb(130, 185, 0);
-    color: white;
+    background-color: #78b200;/*Uso de três tons de cor: #78b200 (verde)*/
+    color: white;/*Título da tabela na cor branca*/
+    text-align: center;
+}
+
+td:first-child {
+    width: 5%; /*As colunas referentes às posições correspondem, em termos de largura, a 5% da largura da tabela, cada uma*/
+}
+
+/*Seleciona o segundo td da tabela (Cidade)*/
+td:first-child + td {
+    color: #0D5188;/*Nomes das cidades: cor de código #0D5188(azul escuro)*/
+}
+
+tr:nth-child(odd) {
+    background: #ededed;/*Cores a escolha para intercalar as linhas da tabela*/
+}
+
+tr:nth-child(even) {
+    background: #ffffff;/*Cores a escolha para intercalar as linhas da tabela*/
+}
+
+.quantitativos {
+    width: 15%; /*As  colunas  referentes  aos  quantitativos  populacionais  correspondem,  em  termos  de  largura,  a  15%  da  largura  da tabela, cada uma*/
 }

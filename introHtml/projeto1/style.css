@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+
+header {
+    border: solid 2px green;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+img:hover {
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+#itensMenu {
+    margin-right: 50%;
+}
+
+.container {
+	padding: 10px 10px 10px 0px;
+	margin: 0 auto;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.navMenu ul {
+	text-align: center;
+}
+
+.navMenu li {
+    margin-left: 20px;
+    font-size: 20px;
+	display: inline;
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+.navMenu a {
+    color: black;
+    text-decoration: none;
+}
+
+.navMenu a:hover {
+    color: green;
+}

@@ -1,16 +1,16 @@
 body {
     margin: 0;
-    border: solid 2px green;
 }
 
 footer {
-    border: solid 2px green;
-    height: 130px;
+    height: 100px;
+    background-color: rgb(40, 40, 40);
+    padding-top: 2%;
 }
 
 header {
-    height: 130px;
-    border: solid 2px green;
+    height: 20%;
+    background-color: rgb(40, 40, 40);
 }
 
 img {
@@ -23,7 +23,7 @@ img:hover {
     cursor: pointer;
 }
 
-li {
+li {    
     color: black;
     text-decoration: none;
     list-style-type: none;
@@ -31,35 +31,48 @@ li {
     line-height: 60px;
 }
 
+#itensMenu {
+    display: flex;
+    align-items: center;
+}
+
 #containerPrincipal {
     width: 100%;
-    height: 700px;
     display: flex;
 }
 
 #containerEsq { 
-    height: 100%;
-    border: solid 2px green;
-    flex: 0.5;
+    flex: 1;
+    background-color: rgb(155, 155, 155);
+    display: flex;
+    justify-content:right;
 }
 
 #containerDir {
-    height: 100%;
-    border: solid 2px green;
-    flex: 2;
+    flex: 5;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #listaContainerEsq {
-    margin-left: 45%;
+    width: 50%;
+    font-size: 20px;
+    font-family: 'Muli',sans-serif;
 }
 
-#itensMenu {
-    margin-right: 50%;
+#listaContainerEsq li{
+    transition: all .2s cubic-bezier(.22, .61, .36, 1);
 }
 
+#listaContainerEsq li:hover {
+    color: white;
+    transform: translateY(-2px);
+    cursor: pointer;
+}
 .container {
 	padding: 10px 10px 10px 0px;
-	margin: 0 auto;
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -77,10 +90,36 @@ li {
 }
 
 .navMenu a {
-    color: black;
+    font-family: 'Muli',sans-serif;
+    color: white;
     text-decoration: none;
 }
 
 .navMenu a:hover {
-    color: green;
+    color: rgb(69, 119, 226);
+}
+
+.divInline {
+    width: 20%;
+    height: 300px;
+    border: solid 1px rgb(69, 119, 226);
+    border-radius: 15px;
+    padding: 1%;
+    margin-bottom: 3%;
+    font-family: 'Muli',sans-serif;
+}
+
+.divBottom {
+    width: 46%;
+    height: 300px;
+    border: solid 1px rgb(69, 119, 226);
+    border-radius: 15px;
+    padding: 1%;
+    font-family: 'Muli',sans-serif;
+}
+
+.center {
+    font-size: 20px;
+    text-align: center;
+    color: white;
 }

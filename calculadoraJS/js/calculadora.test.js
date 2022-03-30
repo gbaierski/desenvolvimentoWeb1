@@ -1,7 +1,4 @@
-const soma = require('./soma')
-const subtracao = require('./subtracao')
-const multiplicacao = require('./multiplicacao')
-const divisao = require('./divisao')
+import { soma, subtracao, multiplicacao, divisao } from './calculadora'
 
 it('Soma', () => {
     expect(soma(2,4)).toBe(6)

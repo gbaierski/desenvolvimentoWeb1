@@ -7,7 +7,7 @@ function calcular() {
 
     let resultado = bhaskara(a,b,c);
 
-    document.getElementById("resultado").innerHTML = "<b>S =</b> {x1 = " + resultado.x1 + ", x2 = " + resultado.x2 + "}";
+    document.getElementById("resultado").innerHTML = "<b> x'</b> = " + resultado.x1.toFixed(2) + " <br> <b>&nbsp;x\"</b> = " + resultado.x2.toFixed(2);
 }
 
 document.getElementById("calcular").addEventListener("click", calcular);

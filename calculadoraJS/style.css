@@ -23,8 +23,15 @@ h1 {
 }
 
 #resultado {
-    text-align: center;
-    margin-top: 5%;
+  width: 10%;
+  height: 3vw;
+  margin-left: 45%;
+  border-radius: 10px;
+  border: solid 2px white;
+  color: white;
+  font-size: 130%;
+  text-align: center;
+  margin-top: 5%;
     
 }
 

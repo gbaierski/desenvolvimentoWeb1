@@ -8,11 +8,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Calculadora de Bhaskara</h1>
     <div id="boxCalculadora">
-        <input type="number" name="a" placeholder="a" class="input">
-        <input type="number" name="b" placeholder="b" class="input">
-        <input type="number" name="c" placeholder="c" class="input">
-        <button type="button" id="calcular">CALCULAR</button>
+        <input type="number" name="a" id="a" placeholder="a" class="input">
+        <input type="number" name="b" id="b" placeholder="b" class="input">
+        <input type="number" name="c" id="c" placeholder="c" class="input">
+        <button type="button" class="botaoCalcular-pushable" id="calcular" onclick="calcular();">
+            <span class="botaoCalcular-shadow"></span>
+            <span class="botaoCalcular-edge"></span>
+            <span class="botaoCalcular-front">
+                <b>CALCULAR</b>
+            </span>
+        </button>
     </div>
+    <div id="resultado"></div>
 </body>
+    <script src="../js/calculadora.js" type="module"></script>
+    <script src="../js/bhaskara.js"></script>
 </html>

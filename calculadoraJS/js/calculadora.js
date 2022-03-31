@@ -14,4 +14,19 @@ function divisao (a, b) {
     return a / b
 }
 
-export { soma, subtracao, multiplicacao, divisao }
+function bhaskara(a,b,c) {
+    let delta =  Math.pow(b, 2) - 4 * a * c;
+    let x1, x2;
+
+    if (delta == 0) {
+        x1 = "NaN";
+        x2 = "NaN";
+    } else {
+        x1 = (-1 * b + Math.sqrt(delta))/ (2*a);
+        x2 = (-1 * b - Math.sqrt(delta))/ (2*a);
+    }
+
+    return {x1,x2}; 
+}
+
+export { soma, subtracao, multiplicacao, divisao, bhaskara }

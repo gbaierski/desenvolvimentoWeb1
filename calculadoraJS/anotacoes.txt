@@ -3,3 +3,5 @@ npm i babel-jest @babel/preset-env //instala o babel
 
 npm init //começar o projeto novo
 npm install //reinstala as dependências faltantes / quando baixa o repositório do git
+
+npm install http-server

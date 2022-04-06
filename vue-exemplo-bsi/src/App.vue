@@ -1,31 +1,36 @@
-<script setup>
-import HelloWorld from "./components/HelloWorld.vue";
-import TheWelcome from "./components/TheWelcome.vue";
+<script>
+export default {
+  data() {
+    return {
+      nome: "Gustavo Baierski",
+      origem: "Brasileiro",
+      likes: 0,
+    };
+  },
+  methods: {
+    like() {
+      this.likes += 1;
+    },
+    deslike() {
+      this.likes -= 1;
+    },
+  },
+};
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="./assets/logo.svg"
-      width="125"
-      height="125"
-    />
+  <h1>Olá Vue!</h1>
+  <h2>Nome: {{ nome }}</h2>
+  <h2>Origem: {{ origem }}</h2>
+  <h2>Likes: {{ likes }}</h2>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+  <button v-on:click="like()">Like</button>
+  <button v-on:click="deslike()">Deslike</button>
 
-  <main>
-    <TheWelcome />
-  </main>
+  <input type="text" v-model="nome" />
 </template>
 
 <style>
-@import "./assets/base.css";
-
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -34,7 +39,7 @@ import TheWelcome from "./components/TheWelcome.vue";
   font-weight: normal;
 }
 
-header {
+/* header {
   line-height: 1.5;
 }
 
@@ -83,5 +88,5 @@ a,
   .logo {
     margin: 0 2rem 0 0;
   }
-}
+} */
 </style>

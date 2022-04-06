@@ -14,8 +14,11 @@ function divisao (a, b) {
     return a / b
 }
 
-function bhaskara(a,b,c) {
-    let delta =  Math.pow(b, 2) - 4 * a * c;
+function delta(a,b,c) {
+   return Math.pow(b, 2) - 4 * a * c;
+}
+
+function bhaskara(a,b,delta) {
     let x1, x2;
 
     if (delta == 0) {
@@ -29,4 +32,4 @@ function bhaskara(a,b,c) {
     return {x1,x2}; 
 }
 
-export { soma, subtracao, multiplicacao, divisao, bhaskara }
+export { soma, subtracao, multiplicacao, divisao, delta, bhaskara }

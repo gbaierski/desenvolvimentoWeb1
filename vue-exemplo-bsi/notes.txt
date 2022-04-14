@@ -2,6 +2,13 @@
 
 npm init vue@latest
 
+npm init vue@latest . (Cria o projeto diretamente na pasta, sem sub-diretório)
+Observação (
+    Ao contrário do comando sem '.', a primeira informação solicitada será o nome do package.json,
+    já no comando "normal" seria o nome do repositório, 
+    portanto é necessário atenção para informar o nome sem camel case.
+)
+
 
 2) Acessar a pasta e instalar as dependências
 

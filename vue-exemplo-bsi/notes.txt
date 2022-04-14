@@ -1,0 +1,36 @@
+1) Criar um projeto
+
+npm init vue@latest
+
+
+2) Acessar a pasta e instalar as dependências
+
+cd (pasta), npm install / npm i
+
+Os pacotes das dependências ficam no arquivo package.json, caso o arquivo não exista, ele será criado
+
+
+3) Executar o vue/projeto
+
+npm run dev
+------------------------
+
+// Extensões
+
+Eslint - reporta erros no JS
+Prettier - formata o código para melhor visualização
+Volar - roda um servidor atualizado dinamicamente (vite)
+
+Vetur (Caso esteja habilitada, desabilitar)
+
+
+// Comando para iniciar o servidor utilizando a extensão vite
+
+npm run (dev) - dev:comando definido para rodar o vite  
+
+
+// Descrições
+
+v-if -> o elemento fica omitido, indicando apenas que existe um v-if
+
+v-show -> o elemento já fica montado na tela, porém com display none

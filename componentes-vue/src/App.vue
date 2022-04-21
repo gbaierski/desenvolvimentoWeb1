@@ -1,8 +1,8 @@
 <script>
 import MenuLateral from "@/components/MenuLateral.vue";
-import Header from "./components/Header.vue";
-import Main from "./components/Main.vue";
-import Footer from "./components/Footer.vue";
+import Header from "@/components/Header.vue";
+import Main from "@/components/Main.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   components: { MenuLateral, Header, Main, Footer },
 };

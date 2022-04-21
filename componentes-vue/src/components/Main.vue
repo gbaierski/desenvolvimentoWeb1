@@ -6,15 +6,14 @@ export default {
 </script>
 <template>
     <main id="content">
-        Principal
-        <Block />
-        <Block />
-        <Block />
-        <Block />
-        <Block />
-        <Block />
-        <Block />
-        <Block />
+        <Block class="backgroundColorido" />
+        <Block class="backgroundColorido"/>
+        <Block class="backgroundColorido"/>
+        <Block class="backgroundColorido"/>
+        <Block class="backgroundColorido"/>
+        <Block class="backgroundColorido"/>
+        <Block class="backgroundColorido"/>
+        <Block class="backgroundColorido"/>
     </main>
 </template>
 <style></style>

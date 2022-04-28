@@ -4,6 +4,7 @@ import CardContainer from './components/CardContainer.vue';
 
 <template>
     <section id="kanbanContainer">
+        <h1>Kanban DevWeb</h1>
         <div id="kanban">
             <CardContainer />
             <CardContainer />
@@ -21,10 +22,17 @@ import CardContainer from './components/CardContainer.vue';
       font-family: 'Muli',sans-serif;
   }
 
+  h1 {
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+  }
+
   #kanbanContainer {
       width: 100vw;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
   }
@@ -108,18 +116,41 @@ import CardContainer from './components/CardContainer.vue';
       width: 25%;
       border-radius: 5px;
   }
-  .tag1 {
+  .tag:nth-child(1) {
       background: hsla(26, 89%, 48%, 1);
       background: linear-gradient(90deg, rgb(148, 95, 118) 0%, rgb(81, 136, 148) 100%);
   }
 
-  .tag2 {
+  .tag:nth-child(2) {
       background: hsla(136, 100%, 54%, 1);
       background: linear-gradient(90deg, rgb(96, 158, 112) 0%, rgb(26, 129, 131) 100%);
   }
 
-  .tag3 {
+  .tag:nth-child(3) {
       background: hsla(201, 100%, 54%, 1);
       background: linear-gradient(90deg, rgb(81, 115, 133) 0%, rgb(49, 72, 97) 100%);
   }
+
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent
+}
+ 
+/* Handle */
+.cardsContainer:nth-child(odd)::-webkit-scrollbar-thumb {
+    background:  linear-gradient(0deg, hsla(334, 34%, 58%, 1) 20%, hsla(191, 63%, 61%, 1) 100%);
+    border-radius: 5px;
+}
+
+/* Handle */
+.cardsContainer:nth-child(even)::-webkit-scrollbar-thumb {
+    background:  linear-gradient(0deg, hsla(191, 63%, 61%, 1) 20%, hsla(334, 34%, 58%, 1) 100%);
+    border-radius: 5px;
+}
+
 </style>

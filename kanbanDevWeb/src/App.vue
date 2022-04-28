@@ -1,43 +1,14 @@
 <script setup>
+import CardContainer from './components/CardContainer.vue';
 </script>
 
 <template>
     <section id="kanbanContainer">
         <div id="kanban">
-            <div class="cardsContainer">
-                <div class="tituloCardContainer">Backlog</div>
-                <div class="cards">
-                    <div class="card">
-                        <div class="tituloCard">Titulo 1</div>
-                        <div class="descCard">Descrição titulo 1. Teste descrição 1.</div>
-                        <div class="tagsCard">
-                            <div class="tag tag1">Importante</div>
-                            <div class="tag tag2">Hotfix</div>
-                            <div class="tag tag3">Versão 1</div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="tituloCard">Titulo 2</div>
-                        <div class="descCard">Descrição titulo 2. Teste descrição 2.</div>
-                        <div class="tagsCard">
-                            <div class="tag tag1">Médio</div>
-                            <div class="tag tag2">Improvement</div>
-                            <div class="tag tag3">Versão 1.2</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cardsContainer">
-                <div class="tituloCardContainer">To Do</div>
-                
-            </div>
-            <div class="cardsContainer">
-                <div class="tituloCardContainer">Doing</div>
-            </div>
-            <div class="cardsContainer">
-                <div class="tituloCardContainer">Done</div>
-            </div>
+            <CardContainer />
+            <CardContainer />
+            <CardContainer />
+            <CardContainer />
         </div>
     </section>
 </template>
@@ -74,6 +45,7 @@
       border-radius: 5px;
       background: transparent;
       border: solid 1px hsla(334, 34%, 58%, 1);
+      overflow:auto;
   }
 
   .cardsContainer:nth-child(odd) {
@@ -88,11 +60,12 @@
   }
 
   .cards {
-      width: 100%;
-      height: 93%;
-      border-radius: 5px;
-      display: flex;
-      flex-direction: column;
+        width: 100%;
+        height: 93%;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 5%;
   }
 
   .card {
@@ -104,6 +77,8 @@
       color: black;
       text-align: center;
       border-radius: 5px;
+      padding-top: 10px;
+      padding-bottom: 10px;
   }
 
   .tituloCard {
@@ -130,7 +105,7 @@
       color: white;
       font-weight: bold;
       margin-left: 2%;
-      width: 18%;
+      width: 25%;
       border-radius: 5px;
   }
   .tag1 {

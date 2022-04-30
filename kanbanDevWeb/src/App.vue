@@ -38,24 +38,22 @@ h1 {
 }
 
 .bordaTitulo {
-    width: 80px;
+    width: 30px;
     height: 50px;
     position: absolute;
     background-color:rgb(46, 46, 46);
-    border-radius: 10px 10px 0 0;
-    border-top: solid 1px red;
 }
 
 #bordaEsq {
-    transform: translateX(-100px);
+    transform: translateX(-95px);
     padding-right: 20px; 
-    border-left: solid 1px red;
+    border-radius: 10px 0px 0 0;
 }
 
 #bordaDir {
-    transform: translateX(+230px);
+    transform: translateX(+270px);
     padding-left: 20px; 
-    border-right: solid 1px red;
+    border-radius: 0px 10px 0 0;
 }
 
 #kanbanContainer {
@@ -75,6 +73,7 @@ h1 {
     align-items: center;
     justify-content: space-around;
     border-radius: 5px;
+    box-shadow: rgba(184, 111, 143, 0.67) 5px 5px, rgba(152, 73, 107, 0.431) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
 }
 
 .cardsContainer {

@@ -1,5 +1,23 @@
-<script setup>
+<script>
 import CardContainer from './components/CardContainer.vue';
+
+export default {
+    components: {
+        CardContainer,
+    },
+    data() {
+        return {
+            containers : [
+            {containerId: 1, titulo: "Backlog" },
+            {containerId: 2, titulo: "To Do" },
+            {containerId: 3, titulo: "Doing" },
+            {containerId: 4, titulo: "Done" },
+            ],
+        }
+
+    }
+}
+
 </script>
 
 <template>
@@ -10,10 +28,7 @@ import CardContainer from './components/CardContainer.vue';
             Kanban DevWeb
         </h1>
         <div id="kanban">
-            <CardContainer />
-            <CardContainer />
-            <CardContainer />
-            <CardContainer />
+            <CardContainer v-for="container in containers" :key="container.containerId" :container="container"/>
         </div>
     </section>
 </template>

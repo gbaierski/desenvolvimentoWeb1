@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card" v-for="card in cardContainer" :key="card.id">
         <div class="tituloCard">{{ card.nome }}</div>
         <div class="descCard">{{ card.desc }}</div>
         <div class="tagsCard">
@@ -11,7 +11,7 @@
 <script>
     export default {
         props: {
-            card: {
+            cardContainer: {
                 type:Object
             }
         }

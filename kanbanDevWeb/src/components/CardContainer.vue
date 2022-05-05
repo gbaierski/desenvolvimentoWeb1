@@ -14,7 +14,7 @@ export default {
     <div class="cardsContainer">
         <div class="tituloCardContainer">{{container.titulo}}</div>
         <div class="cards">
-            <Card v-for="card in container.cards" :key="card.id" :card="card"/>
+            <Card v-for="card in container.cards" :key="card.id" :cardContainer="card"/>
         </div>
     </div>
 </template>

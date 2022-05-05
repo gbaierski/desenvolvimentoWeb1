@@ -1,0 +1,11 @@
+emit do card ate a raiz
+achar a pos do Card pelo id dentro do array (que já está noutro array)
+adicionar essa posicao no novo array
+remover a posição
+
+
+// busca o elemento com find e busca o seu index com o objeto inteiro
+cards.indexOf(cards.find(i => i.id === 3))
+
+Acessando o objeto que contém um array
+{{container.cards}}

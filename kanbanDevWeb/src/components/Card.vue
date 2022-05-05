@@ -14,5 +14,10 @@
         <div class="tagsCard">
             <div class="tag" v-for="tag in cardContainer.tags">{{ tag }}</div>
         </div>
+        <div class="containerBotoesMover">
+            <button class="botaoMover">❮</button>
+            <button class="botaoMover">❯</button>
+        </div>
+
     </div>
 </template>

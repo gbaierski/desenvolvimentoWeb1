@@ -1,74 +1,163 @@
-/* color palette from <https://github.com/vuejs/theme> */
-:root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
-
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
-}
-
-/* semantic color variables for this project */
-:root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-  }
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  position: relative;
-  font-weight: normal;
-}
-
 body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background: linear-gradient(90deg, hsla(334, 34%, 58%, 1) 0%, hsla(191, 63%, 61%, 1) 100%);
+  color: white;
+  font-family: 'Muli',sans-serif;
+}
+
+h1 {
+  height: 35px;
+  font-size: 180%;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  background-color: rgb(46, 46, 46);
+  padding: 20px 50px 10px 50px;
+  transform: translateY(25px);
+}
+
+.bordaTitulo {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  background-color:rgb(46, 46, 46);
+}
+
+#bordaEsq {
+  transform: translateX(-95px);
+  padding-right: 20px; 
+  border-radius: 10px 0px 0 0;
+}
+
+#bordaDir {
+  transform: translateX(+270px);
+  padding-left: 20px; 
+  border-radius: 0px 10px 0 0;
+}
+
+#kanbanContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#kanban {
+  width: 90%;
+  height: 600px;
+  background-color: rgb(46, 46, 46);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 5px;
+  box-shadow: rgba(184, 111, 143, 0.67) 5px 5px, rgba(152, 73, 107, 0.431) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px;
+}
+
+.cardsContainer {
+  width: 23%;
+  height: 90%;
+  border-radius: 5px;
+  background: transparent;
+  border: solid 1px hsla(334, 34%, 58%, 1);
+  overflow:auto;
+}
+
+.cardsContainer:nth-child(odd) {
+  border: solid 1px hsla(191, 63%, 61%, 1);
+}
+
+.tituloCardContainer {
+  font-size: 140%;
+  padding: 2%;
+  text-align: center;
+  height: 5%;
+}
+
+.cards {
+  width: 100%;
+  height: 93%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5%;
+}
+
+.card {
+  width: 90%;
+  height: 20%;
+  margin-top: 5%;
+  margin-left: 5%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.tituloCard {
+  font-weight: bold;
+  font-size: 110%;
+  margin-top: 2%;
+}
+
+.descCard {
+  font-size: 80%;
+  margin-top: 5%;
+}
+
+.tagsCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.tag {
+  font-size: 60%;
+  padding: 3px;
+  color: white;
+  font-weight: bold;
+  margin-left: 2%;
+  width: 25%;
+  border-radius: 5px;
+}
+.tag:nth-child(1) {
+  background: hsla(26, 89%, 48%, 1);
+  background: linear-gradient(90deg, rgb(148, 95, 118) 0%, rgb(81, 136, 148) 100%);
+}
+
+.tag:nth-child(2) {
+  background: hsla(136, 100%, 54%, 1);
+  background: linear-gradient(90deg, rgb(96, 158, 112) 0%, rgb(26, 129, 131) 100%);
+}
+
+.tag:nth-child(3) {
+  background: hsla(201, 100%, 54%, 1);
+  background: linear-gradient(90deg, rgb(81, 115, 133) 0%, rgb(49, 72, 97) 100%);
+}
+
+/* width */
+::-webkit-scrollbar {
+width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: transparent
+}
+
+/* Handle */
+.cardsContainer:nth-child(odd)::-webkit-scrollbar-thumb {
+  background:  linear-gradient(0deg, hsla(334, 34%, 58%, 1) 20%, hsla(191, 63%, 61%, 1) 100%);
+  border-radius: 5px;
+}
+
+/* Handle */
+.cardsContainer:nth-child(even)::-webkit-scrollbar-thumb {
+  background:  linear-gradient(0deg, hsla(191, 63%, 61%, 1) 20%, hsla(334, 34%, 58%, 1) 100%);
+  border-radius: 5px;
 }

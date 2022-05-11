@@ -6,6 +6,7 @@ body {
 }
 
 h1 {
+  width: 230px;
   height: 35px;
   font-size: 180%;
   font-weight: bold;
@@ -142,6 +143,19 @@ h1 {
   border: none;
   text-align: center;
   font-size: 70%;
+  transition:
+  transform
+  250ms
+  cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.botaoMover:hover {
+  cursor: pointer;
+  transition:
+  transform
+  250ms
+  cubic-bezier(.3, .7, .4, 1.5);
+  transform: translateY(-2px);
 }
 
 .botaoMover:nth-child(1) {

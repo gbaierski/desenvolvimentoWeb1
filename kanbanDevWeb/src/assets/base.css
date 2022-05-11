@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  background: linear-gradient(90deg, hsla(334, 34%, 58%, 1) 0%, hsla(191, 63%, 61%, 1) 100%);
+  background: linear-gradient(-45deg, rgb(242, 119, 172) 0%, hsla(191, 63%, 61%, 1) 100%);
+  animation: gradient 10s ease infinite;
+  background-size: 400% 400%;
   color: white;
   font-family: 'Muli',sans-serif;
 }
@@ -201,4 +203,16 @@ background: transparent
 .cardsContainer:nth-child(even)::-webkit-scrollbar-thumb {
   background:  linear-gradient(0deg, hsla(191, 63%, 61%, 1) 20%, hsla(334, 34%, 58%, 1) 100%);
   border-radius: 5px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

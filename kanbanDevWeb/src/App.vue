@@ -58,7 +58,7 @@ export default {
         <h1>
             <div id="bordaEsq" class="bordaTitulo"></div> 
             <div id="bordaDir" class="bordaTitulo"></div> 
-            Kalm Kanban
+            Zenflow
         </h1>
         <div id="kanban">
             <CardContainer v-for="container in containers" :key="container.containerId" :container="container" @retornar = "retornar"  @prosseguir = "prosseguir"/>

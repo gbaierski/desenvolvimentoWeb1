@@ -89,7 +89,6 @@ h1 {
 
 .card {
   width: 90%;
-  height: 22.5%;
   margin-top: 5%;
   margin-left: 5%;
   background-color: white;
@@ -133,6 +132,12 @@ h1 {
   padding-top: 5px;
   width: 30%;
   margin-left: 35%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.containerBotoesMover div {
+  width: 80%;
   display: flex;
   justify-content: space-around;
 }

@@ -22,8 +22,19 @@ export default {
       <div class="tag" v-for="tag in card.tags">{{ tag }}</div>
     </div>
     <div class="containerBotoesMover">
-      <button class="botaoMover" @click="$emit('retornar', card.id, containerId)">❮</button>
-      <button class="botaoMover" @click="$emit('prosseguir', card.id, containerId)">❯</button>
+      <div v-if="containerId == 0">
+        <button class="botaoMover" @click="$emit('prosseguir', card.id, containerId)">❯</button>
+      </div>
+      <div v-else-if="containerId == 3">
+          <button class="botaoMover" @click="$emit('retornar', card.id, containerId)">❮</button>
+      </div>
+      <div v-else>
+        <button class="botaoMover" @click="$emit('retornar', card.id, containerId)">❮</button>
+        <button class="botaoMover" @click="$emit('prosseguir', card.id, containerId)">❯</button>
+      </div>
     </div>
   </div>
 </template>
+<style scoped>
+
+</style>

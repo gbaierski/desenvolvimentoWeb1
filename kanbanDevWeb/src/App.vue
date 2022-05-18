@@ -7,16 +7,46 @@ export default {
     },
     methods: {
         retornar(id, containerId) {
-            alert("ret: " + id + containerId);
+            id = parseInt(id);
+            containerId = parseInt(containerId);
+
+            let containerAlvo = containerId - 1;
+
+            if (containerAlvo >= 0) {
+                this.containers[containerId].cards.forEach(card => {
+                    if (card.id == id) {
+                        let index = this.containers[containerId].cards.map(card => card.id).indexOf(id);
+
+                        this.containers[containerAlvo].cards.push(card);
+                        this.containers[containerId].cards.splice(index, 1);
+                    }
+
+                });
+            }
         },
         prosseguir(id, containerId) {
-            alert("pross: " + id + containerId);
+                        id = parseInt(id);
+            containerId = parseInt(containerId);
+
+            let containerAlvo = containerId + 1;
+
+            if (containerAlvo <= 3) {
+                this.containers[containerId].cards.forEach(card => {
+                    if (card.id == id) {
+                        let index = this.containers[containerId].cards.map(card => card.id).indexOf(id);
+
+                        this.containers[containerAlvo].cards.push(card);
+                        this.containers[containerId].cards.splice(index, 1);
+                    }
+
+                });
+            }
         }
     },
     data() {
         return {
             containers : [
-                {
+               {
                     titulo: "Backlog" ,
                     id: 0,
                     cards: [

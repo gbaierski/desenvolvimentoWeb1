@@ -25,7 +25,7 @@ export default {
             }
         },
         prosseguir(id, containerId) {
-                        id = parseInt(id);
+            id = parseInt(id);
             containerId = parseInt(containerId);
 
             let containerAlvo = containerId + 1;

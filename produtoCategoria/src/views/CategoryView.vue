@@ -9,7 +9,8 @@ export default {
             currentCategory: {
                 id: "",
                 description: "",
-            }
+            },
+            editing: false,
         }
     },
     computed: {
@@ -17,13 +18,32 @@ export default {
         ...mapState(useCategoryStore, ["categories"]),
     },
     methods: {
-        ...mapActions(useCategoryStore, ["getAllCategories", "saveCategory"]),
+        ...mapActions(useCategoryStore, ["getAllCategories", "saveCategory", "deleteCategory"]),
         save() {
-            this.saveCategory(this.currentCategory);    
+            //if (this.editing)
+            //    this.updateCategory(this.currentCategory);   
+            //else
+                this.saveCategory(this.currentCategory);    
+        },
+        async deleteItem(item_id) {
+            try {
+                await this.deleteCategory(item_id);
+                alert("Item excluído com sucesso.");
+            } catch(e) {
+                alert(e);
+            }
+        },
+        async prepareToUpdate(item_id) {
+            Object.assign(this.currentCategory, item_id);
+            this.editing = true;
         }
     },
-    mounted() {
-        this.getAllCategories();
+    async mounted() {
+        try{
+            await this.getAllCategories();
+        } catch(e) {
+            alert(e);
+        }
     }
 }
 </script>
@@ -32,7 +52,9 @@ export default {
     <h1>Cadastro de Categorias</h1>
     <div class="category-form">
         <input type="text" v-model="currentCategory.description" placeholder="Categoria">
-        <button class="addButton" @click="save()">+</button>
+        <button class="addButton" @click="save()">
+        {{ editing ? "✓" : "+" }}
+        </button>
     </div>
     <div class="categories-list">
         <table>
@@ -53,7 +75,10 @@ export default {
             <tr v-for="category of categories" :key="category.id">
                 <td>{{ category.id }}</td>
                 <td>{{ category.description }}</td>
-                <td></td>
+                <td id="containerActions">
+                    <button class="buttonUpdDel" @click="prepareToUpdate(category)"> ✏️ </button>
+                    <button class="buttonUpdDel" @click="deleteItem(category.id)"> 🗑️ </button>
+                </td>
             </tr>
         </tbody>
         </table>
@@ -129,5 +154,37 @@ tr {
 
 tr:nth-child(even) {
     background-color: gainsboro;
+}
+
+#containerActions {
+    display: flex;
+    justify-content: center;
+}
+
+.buttonUpdDel {
+    border: solid 1px gainsboro;
+    background-color: white;
+    border-radius: 10px;
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: all 0.3s;
+}
+
+.buttonUpdDel:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.buttonUpdDel:nth-child(1):hover {
+    border-color: rgb(50, 165, 98);
+}
+
+.buttonUpdDel:nth-child(2):hover {
+    border-color: rgb(206, 57, 57);
 }
 </style>

@@ -9,7 +9,7 @@ export const useCategoryStore = defineStore({
   actions: {
     async getAllCategories() {
       try {
-        const { data } = await axios.get("http://localhost:4000/category");
+        const { data } = await axios.get("http://localhost:4000/categories");
         this.categories = data;
         return Promise.resolve();
       } catch (e) {
@@ -31,7 +31,7 @@ export const useCategoryStore = defineStore({
     async addCategory(category) {
       try {
         const { data } = await axios.post(
-          "http://localhost:4000/category",
+          "http://localhost:4000/categories",
           category
         );
         this.categories.push(data);
@@ -44,7 +44,7 @@ export const useCategoryStore = defineStore({
     async updateCategory(category) {
       try {
         const { data } = await axios.put(
-          `http://localhost:4000/category/${category.id}`,
+          `http://localhost:4000/categories/${category.id}`,
           category
         );
         const index = this.categories.findIndex((c) => c.id === category.id);
@@ -56,7 +56,7 @@ export const useCategoryStore = defineStore({
     },
     async deleteCategory(category_id) {
       try {
-        await axios.delete(`http://localhost:4000/category/${category_id}`);
+        await axios.delete(`http://localhost:4000/categories/${category_id}`);
         const index = this.categories.findIndex(
           (category) => category.id === category_id
         );

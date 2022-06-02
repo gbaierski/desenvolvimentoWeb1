@@ -1,5 +1,5 @@
 {
-  "category": [
+  "categories": [
     {
       "id": 1,
       "description": "Terror"
@@ -15,6 +15,17 @@
     {
       "id": 4,
       "description": "Romance"
+    },
+    {
+      "id": 5,
+      "description": "SciFi"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "description": "Teste",
+      "categoryId": 3
     }
   ]
 }

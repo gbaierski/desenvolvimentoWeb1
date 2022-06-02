@@ -55,10 +55,13 @@ export default {
 <template>
   <h1>Cadastro de Produtos</h1>
   <div class="product-form">
-    <input type="text" v-model="currentProduct.description" placeholder="Produto" />
-    <button class="addButton" @click="save()">
-      {{ editing ? "✓" : "+" }}
-    </button>
+    <div id="containerInputProduct">
+        <input class="inputProduct" type="text" v-model="currentProduct.description" placeholder="Produto" />
+        <input class="inputProduct" type="text" v-model="currentProduct.categoryId" placeholder="ID Categoria" />
+        <button class="addButton" @click="save()">
+            {{ editing ? "✓" : "+" }}
+        </button>
+    </div>
   </div>
   <div class="products-list">
     <table>
@@ -93,7 +96,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 h1 {
   text-align: center;
 }
@@ -102,15 +105,25 @@ h1 {
   margin-bottom: 30px;
 }
 
-.product-form input {
-  width: 70%;
+.inputProduct {
+    height: 40px;
+    border-radius: 5px;
+    border: solid 2px gainsboro;
+    font-size: 120%;
+}
+.inputProduct:nth-child(1) {
+  width: 50%;
   height: 40px;
   border-radius: 5px;
   border: solid 2px gainsboro;
   margin-left: 15%;
   font-size: 120%;
+  margin-right: 0.5%;
 }
 
+.inputProduct:nth-child(2) {
+    width: 19.5%;
+}
 .addButton {
   background-color: rgb(50, 165, 98);
   border: none;

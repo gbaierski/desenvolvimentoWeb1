@@ -24,8 +24,21 @@
   "products": [
     {
       "id": 1,
-      "description": "Teste",
-      "categoryId": 3
+      "description": "Livro muito épico",
+      "categoryId": 3,
+      "category": {
+        "id": 3,
+        "description": "Ação"
+      }
+    },
+    {
+      "id": 2,
+      "description": "Uma história de Bonifezes no bloco D",
+      "categoryId": 4,
+      "category": {
+        "id": 4,
+        "description": "Romance"
+      }
     }
   ]
 }

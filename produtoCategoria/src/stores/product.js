@@ -9,7 +9,7 @@ export const useProductStore = defineStore({
   actions: {
     async getAllProducts() {
       try {
-        const { data } = await axios.get("http://localhost:4000/products");
+        const { data } = await axios.get("http://localhost:4000/products?expand=category");
         this.products = data;
         return Promise.resolve();
       } catch (e) {

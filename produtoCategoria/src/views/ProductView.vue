@@ -1,6 +1,7 @@
 <script>
 import { mapState, mapStores, mapActions } from "pinia";
 import { useProductStore } from "@/stores/product";
+import { useCategoryStore } from "@/stores/category";
 
 export default {
   data() {
@@ -16,9 +17,11 @@ export default {
   computed: {
     ...mapStores(useProductStore),
     ...mapState(useProductStore, ["products"]),
+    ...mapState(useCategoryStore, ["categories"]),
   },
   methods: {
     ...mapActions(useProductStore, ["getAllProducts", "saveProduct", "deleteProduct"]),
+    ...mapActions(useCategoryStore, ["getAllCategories"]),
     async save() {
       try {
         const msg = await this.saveProduct(this.currentProduct);
@@ -45,6 +48,7 @@ export default {
   async mounted() {
     try {
       await this.getAllProducts();
+      await this.getAllCategories();
     } catch (e) {
       alert(e);
     }
@@ -56,11 +60,20 @@ export default {
   <h1>Cadastro de Produtos</h1>
   <div class="product-form">
     <div id="containerInputProduct">
-        <input class="inputProduct" type="text" v-model="currentProduct.description" placeholder="Produto" />
-        <input class="inputProduct" type="text" v-model="currentProduct.categoryId" placeholder="ID Categoria" />
-        <button class="addButton" @click="save()">
-            {{ editing ? "✓" : "+" }}
-        </button>
+      <input
+        class="inputProduct"
+        type="text"
+        v-model="currentProduct.description"
+        placeholder="Produto"
+      />
+      <select class="inputProduct" v-model="currentProduct.categoryId">
+        <option v-for="category in categories" :value="category.id" :key="category.id">
+          {{ category.description }}
+        </option>
+      </select>
+      <button class="addButton" @click="save()">
+        {{ editing ? "✓" : "+" }}
+      </button>
     </div>
   </div>
   <div class="products-list">
@@ -85,7 +98,7 @@ export default {
         <tr v-for="product of products" :key="product.id">
           <td>{{ product.id }}</td>
           <td>{{ product.description }}</td>
-          <td>{{ product.categoryId }}</td>
+          <td>{{ product.category.description }}</td>
           <td id="containerActions">
             <button class="buttonUpdDel" @click="prepareToUpdate(product)">✏️</button>
             <button class="buttonUpdDel" @click="deleteItem(product.id)">🗑️</button>
@@ -106,13 +119,14 @@ h1 {
 }
 
 .inputProduct {
-    height: 40px;
-    border-radius: 5px;
-    border: solid 2px gainsboro;
-    font-size: 120%;
+  height: 40px;
+  border-radius: 5px;
+  border: solid 2px gainsboro;
+  font-size: 120%;
+  background-color: white;
 }
 .inputProduct:nth-child(1) {
-  width: 50%;
+  width: 62%;
   height: 40px;
   border-radius: 5px;
   border: solid 2px gainsboro;
@@ -122,7 +136,8 @@ h1 {
 }
 
 .inputProduct:nth-child(2) {
-    width: 19.5%;
+  width: 7.5%;
+  text-align: center;
 }
 .addButton {
   background-color: rgb(50, 165, 98);

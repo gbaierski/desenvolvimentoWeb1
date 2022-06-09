@@ -9,7 +9,7 @@ export default {
       currentProduct: {
         id: "",
         description: "",
-        categoryId: 1,
+        categoryId: "",
       },
       editing: false,
     };
@@ -44,6 +44,10 @@ export default {
       Object.assign(this.currentProduct, item_id);
       this.editing = true;
     },
+    async cancel() {
+      this.editing = false;
+      this.currentProduct = {};
+    },
   },
   async mounted() {
     try {
@@ -74,6 +78,9 @@ export default {
       <button class="addButton" @click="save()">
         {{ editing ? "✓" : "+" }}
       </button>
+      <button class="cancelButton" v-if="editing" @click="cancel()">
+      X
+    </button>
     </div>
   </div>
   <div class="products-list">
@@ -157,6 +164,27 @@ h1 {
 .addButton:hover {
   transform: scale(1.05);
   background-color: rgb(22, 150, 75);
+  cursor: pointer;
+}
+
+.cancelButton {
+  background-color: rgb(206, 57, 57);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 30px;
+  height: 30px;
+  font-size: 150%;
+  font-weight: bold;
+  transition: all 0.3s;
+  margin-left: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.cancelButton:hover {
+  transform: scale(1.05);
+  background-color: rgb(163, 46, 46);
   cursor: pointer;
 }
 

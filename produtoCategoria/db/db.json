@@ -19,6 +19,10 @@
     {
       "id": 5,
       "description": "SciFi"
+    },
+    {
+      "id": 6,
+      "description": "Percheron"
     }
   ],
   "products": [
@@ -39,6 +43,11 @@
         "id": 4,
         "description": "Romance"
       }
+    },
+    {
+      "id": 3,
+      "description": "Cavalo",
+      "categoryId": 6
     }
   ]
 }
